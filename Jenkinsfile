@@ -1,12 +1,8 @@
 
 pipeline {
 
-    agent {
-        node {
-            label 'SLAVE01'
-        }
-    }
-
+    agent any 
+    
     tools { 
         maven 'maven3' 
     }
@@ -50,7 +46,7 @@ pipeline {
             }
         }
 
-        stage('Priting All Global Variables') {
+        stage('Printing All Global Variables') {
             steps {
                 sh """
                 env
